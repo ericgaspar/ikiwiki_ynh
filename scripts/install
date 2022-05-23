@@ -67,6 +67,16 @@ ynh_exec_warn_less  ynh_install_app_dependencies $pkg_dependencies
 # # Create a system user
 # ynh_system_user_create --username=$app --home_dir="$final_path"
 
+
+
+spawn-fcgi -s /tmp/fcgi.socket -n -- /usr/sbin/fcgiwrap
+
+#This needs to be ran as your user. It can be added to inittab or made into a startup script in init.d. You may also need to make this file writable by the webserver, if that's running as a different user, e.g.:
+
+chmod a+w /tmp/fcgi.socket
+
+
+
 #=================================================
 # NGINX CONFIGURATION
 #=================================================

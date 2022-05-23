@@ -5,7 +5,7 @@
 #=================================================
 
 # dependencies used by the app
-pkg_dependencies="ikiwiki"
+pkg_dependencies="ikiwiki librpc-xml-perl python-docutils spawn-fcgi fcgiwrap"
 
 #=================================================
 # PERSONAL HELPERS
